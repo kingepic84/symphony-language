@@ -7,13 +7,43 @@
 		},
 		{
 			"include": "#strings"
+		},
+		{
+			"include": "#variables"
+		},
+		{
+			"include": "#functions"
+		},
+		{
+			"include": "#numliterals"
 		}
 	],
 	"repository": {
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.symphony",
-				"match": "\\b(if|while|for|return)\\b"
+				"match": "\\b(if-goto|goto|return|label)\\b"
+			}]
+		},
+		"functions":{
+			"patterns": [{
+				"name":"keyword.control.symphony",
+				"match": "\\b(function|call)\\s+([^ \\/]*)",
+				"captures": {
+					"2":{
+						"patterns": [{
+							"name":"entity.name.function",
+							"match": "[a-zA-Z\\_\\.\\$\\:]+[a-zA-Z\\_\\.\\$\\:\\d]*"
+						}]
+					}
+				}
+
+			}]
+		},
+		"numliterals":{
+			"patterns": [{
+				"name":"constant.numeric",
+				"match": "\\d+"
 			}]
 		},
 		"strings": {
@@ -29,4 +59,5 @@
 		}
 	},
 	"scopeName": "source.symphony"
+	
 }
