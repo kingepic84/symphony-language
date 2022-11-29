@@ -1,0 +1,25 @@
+{
+  "name": "symphony-languange",
+  "displayName": "Symphony Languange",
+  "description": "Syntax highlighting for the Symphony stack language",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.73.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "symphony",
+      "aliases": ["Symphony", "symphony"],
+      "extensions": [".vm"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "symphony",
+      "scopeName": "source.symphony",
+      "path": "./syntaxes/symphony.tmLanguage.json"
+    }]
+  }
+}
