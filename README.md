@@ -4,13 +4,14 @@ This extension offers extensive syntax highlighting for the SYMPHONY stack langu
 
 ## Features
 
-- Automatically highlights keywords such as function, label, goto, and more.
-- Automatically highlights the variable names and function names such as `function main 0` and `label GO_HERE`
-- Automatically highlights the logical and mathematical operators such as `and`, `le`, and `sub` 
+- Highlights keywords such as function, label, goto, and more.
+- Highlights the variable names and function names such as `function main 0` and `label GO_HERE`
+- Highlights the logical and mathematical operators such as `and`, `le`, `sub`, and more.
+- Highlights the stack commands, `push` and `pop` 
 
 ## Requirements
 
-This extension works best with the Visual Studio Dark+ theme (stylized as "Dark+ (default dark)" in the color theme selector), as the colors tend to meld together with other themes such that it's harder to distinguish the types from one another. You may stay with your current theme if you are comfortable with that though. 
+No requirements, just install the extension, restart VS Code, and enjoy Syntax Highlighting for the Symphony Language!
 
 ## Release Notes
 
