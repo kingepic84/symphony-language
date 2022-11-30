@@ -1,27 +1,42 @@
 {
-  "name": "symphony-language",
-  "displayName": "Symphony Language",
-  "description": "Syntax highlighting for the Symphony stack language",
-  "version": "0.0.1",
-  "publisher": "kingepic84",
-  "repository": "https://github.com/kingepic84/symphony-language",
-  "engines": {
-    "vscode": "^1.73.0"
-  },
-  "categories": [
-    "Programming Languages"
-  ],
-  "contributes": {
-    "languages": [{
-      "id": "symphony",
-      "aliases": ["Symphony", "symphony"],
-      "extensions": [".vm"],
-      "configuration": "./language-configuration.json"
-    }],
-    "grammars": [{
-      "language": "symphony",
-      "scopeName": "source.symphony",
-      "path": "./syntaxes/symphony.tmLanguage.json"
-    }]
-  }
+	"name": "symphony-language",
+	"displayName": "Symphony Language",
+	"description": "Syntax highlighting for the Symphony stack language",
+	"version": "0.0.1",
+	"publisher": "kingepic84",
+	"repository": "https://github.com/kingepic84/symphony-language",
+	"engines": {
+		"vscode": "^1.73.0"
+	},
+	"categories": [
+		"Programming Languages"
+	],
+	"contributes": {
+		"languages": [
+			{
+				"id": "symphony",
+				"aliases": [
+					"Symphony",
+					"symphony"
+				],
+				"extensions": [
+					".vm"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "symphony",
+				"scopeName": "source.symphony",
+				"path": "./syntaxes/symphony.tmLanguage.json"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "34614594-4fa4-4b0a-a1a3-4fd48b481149",
+		"publisherDisplayName": "Emilio Rochow",
+		"publisherId": "b8f46d70-1dac-4e50-94a6-8d1ab4cc6bf0",
+		"isPreReleaseVersion": false
+	}
 }
