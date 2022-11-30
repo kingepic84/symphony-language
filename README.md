@@ -19,5 +19,8 @@ No requirements, just install the extension, restart VS Code, and enjoy Syntax H
 
 Initial release of The Symphony stack language
 
+### 2.0.0
+
+Added support for label pointers and block comments instead of only single line comments.
 
 **Enjoy the Extension!**
