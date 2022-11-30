@@ -6,4 +6,10 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [Unreleased]
 
-- Initial release
+- Intellisense
+- Snippets
+
+## Released
+
+- Syntax Highlighting
+- In-Line Comments and Block Comments
