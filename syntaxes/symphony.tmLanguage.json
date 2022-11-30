@@ -91,7 +91,7 @@
 		},
 		"stack":{
 			"patterns": [{
-				"name":"keyword.control.symphony",
+				"name":"constant.character.character-class.regexp.symphony",
 				"match": "\\b(push|pop)\\s+([^ \\/]*)",
 				"captures": {
 					"2":{
