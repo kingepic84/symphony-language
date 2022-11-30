@@ -1,6 +1,6 @@
-# Symphony, a stack language brought to you by the 273 class.
+# Symphony, a stack language.
 
-This extension offers extensive syntax highlighting for the 273 class SYMPHONY stack language.
+This extension offers extensive syntax highlighting for the SYMPHONY stack language.
 
 ## Features
 
