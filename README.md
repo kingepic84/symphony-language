@@ -4,7 +4,7 @@ This extension offers extensive syntax highlighting for the SYMPHONY stack langu
 
 ## Features
 
-- Highlights keywords such as function, label, goto, and more.
+- Highlights keywords such as `function`, `label`, `goto`, and more.
 - Highlights the variable names and function names such as `function main 0` and `label GO_HERE`
 - Highlights the logical and mathematical operators such as `and`, `le`, `sub`, and more.
 - Highlights the stack commands, `push` and `pop` 
