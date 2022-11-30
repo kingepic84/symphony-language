@@ -2,7 +2,7 @@
 	"name": "symphony-language",
 	"displayName": "Symphony Language",
 	"description": "Syntax highlighting for the Symphony stack language",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"publisher": "kingepic84",
 	"icon": "images/Trumpet.png",
 	"repository": "https://github.com/kingepic84/symphony-language",
