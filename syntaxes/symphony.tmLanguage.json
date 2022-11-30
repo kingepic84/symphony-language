@@ -27,7 +27,7 @@
 	"repository": {
 		"operators":{
 			"patterns": [{
-				"name":"constant.regexp.symphony",
+				"name":"entity.name.class.symphony",
 				"match": "\\b(add|sub|mul|div|rem|and|or|xor|not|neg|eq|gt|ge|lt|le|ne)\\b"
 			}]
 		},
