@@ -45,7 +45,7 @@
 		},
 		"functions":{
 			"patterns": [{
-				"name":"keyword.control.symphony",
+				"name":"invalid.symphony",
 				"match": "\\b(function|call)\\s+([^ \\/]*)",
 				"captures": {
 					"2":{
@@ -58,7 +58,7 @@
 
 			},
 			{
-				"name":"keyword.control.symphony",
+				"name":"invalid.symphony",
 				"match": "return"
 			}
 		]
