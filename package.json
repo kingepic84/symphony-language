@@ -4,7 +4,7 @@
 	"description": "Syntax highlighting for the Symphony stack language",
 	"version": "0.0.1",
 	"publisher": "kingepic84",
-	"icon": "images/Trumpet-PNG-Free-download.png",
+	"icon": "images/Trumpet.png",
 	"repository": "https://github.com/kingepic84/symphony-language",
 	"engines": {
 		"vscode": "^1.73.0"
