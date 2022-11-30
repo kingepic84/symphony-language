@@ -35,9 +35,14 @@
 		]
 	},
 	"__metadata": {
-		"id": "34614594-4fa4-4b0a-a1a3-4fd48b481149",
+		"id": "01bbb996-e38e-47c7-ae7c-0d581e13e4c4",
 		"publisherDisplayName": "Emilio Rochow",
 		"publisherId": "b8f46d70-1dac-4e50-94a6-8d1ab4cc6bf0",
-		"isPreReleaseVersion": false
+		"isPreReleaseVersion": false,
+		"installedTimestamp": 1669791352363,
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"updated": false,
+		"preRelease": false
 	}
 }
