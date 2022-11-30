@@ -31,8 +31,17 @@
 		"operators":{
 			"patterns": [{
 				"name":"entity.name.class.symphony",
-				"match": "\\b(add|sub|mul|div|rem|and|or|xor|not|neg|eq|gt|ge|lt|le|ne)\\b"
-			}]
+				"match": "\\b(add|sub|mul|div|rem)\\b"
+			},
+			{
+				"name":"variable.other.constant",
+				"match": "\\b(and|or|xor|not|neg)\\b"
+			},
+			{
+				"name":"constant.regexp",
+				"match": "\\b(eq|gt|ge|lt|le|ne)\\b"
+			}
+		]
 		},
 		"functions":{
 			"patterns": [{
