@@ -5,6 +5,7 @@
 	"version": "0.0.1",
 	"publisher": "kingepic84",
 	"repository": "https://github.com/kingepic84/symphony-language",
+	"icon": "images/Trumpet-PNG-Free-download.png",
 	"engines": {
 		"vscode": "^1.73.0"
 	},
