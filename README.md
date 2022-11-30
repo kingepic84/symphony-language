@@ -10,7 +10,7 @@ This extension offers extensive syntax highlighting for the 273 class SYMPHONY s
 
 ## Requirements
 
-This extnesion works best with the Visual studio Dark+ theme (usually its the default dark theme), as the colors tend to meld together such that it is harder to distinguish the types from one another. You may stay with your current theme if you are comfortable with this possibility however. 
+This extension works best with the Visual Studio Dark+ theme (stylized as "Dark+ (default dark)" in the color theme selector), as the colors tend to meld together with other themes such that it's harder to distinguish the types from one another. You may stay with your current theme if you are comfortable with that though. 
 
 ## Release Notes
 
