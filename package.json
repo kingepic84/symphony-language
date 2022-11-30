@@ -1,9 +1,10 @@
 {
-  "name": "symphony-languange",
-  "displayName": "Symphony Languange",
+  "name": "symphony-language",
+  "displayName": "Symphony Language",
   "description": "Syntax highlighting for the Symphony stack language",
   "version": "0.0.1",
-  "repository": "https://github.com/kingepic84/symphony-languange",
+  "publisher": "kingepic84",
+  "repository": "https://github.com/kingepic84/symphony-language",
   "engines": {
     "vscode": "^1.73.0"
   },
