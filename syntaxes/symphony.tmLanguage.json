@@ -3,26 +3,32 @@
 	"name": "Symphony",
 	"patterns": [
 		{
-			"include": "#keywords"
+			"include": "#operators"
 		},
 		{
 			"include": "#strings"
-		},
-		{
-			"include": "#variables"
 		},
 		{
 			"include": "#functions"
 		},
 		{
 			"include": "#numliterals"
+		},
+		{
+			"include": "#labels"
+		},
+		{
+			"include": "#stack"
+		},
+		{
+			"include": "#comments"
 		}
 	],
 	"repository": {
-		"keywords": {
+		"operators":{
 			"patterns": [{
-				"name": "keyword.control.symphony",
-				"match": "\\b(if-goto|goto|return|label)\\b"
+				"name":"keyword.control.symphony",
+				"match": "\\b(add|sub|mul|div|rem|and|or|xor|not|neg|eq|gt|ge|lt|le|ne)\\b"
 			}]
 		},
 		"functions":{
@@ -38,12 +44,23 @@
 					}
 				}
 
-			}]
+			},
+			{
+				"name":"keyword.control.symphony",
+				"match": "return"
+			}
+		]
 		},
 		"numliterals":{
 			"patterns": [{
 				"name":"constant.numeric",
 				"match": "\\d+"
+			}]
+		},
+		"comments":{
+			"patterns": [{
+				"name":"comment",
+				"match": "//.*"
 			}]
 		},
 		"strings": {
@@ -56,6 +73,36 @@
 					"match": "\\\\."
 				}
 			]
+		},
+		"labels":{
+			"patterns": [{
+				"name":"keyword.control.symphony",
+				"match": "\\b(label|goto|if-goto)\\s+([^ \\/]*)",
+				"captures": {
+					"2":{
+						"patterns": [{
+							"name":"variable",
+							"match": "[a-zA-Z\\_\\.\\$\\:]+[a-zA-Z\\_\\.\\$\\:\\d]*"
+						}]
+					}
+				}
+
+			}]
+		},
+		"stack":{
+			"patterns": [{
+				"name":"keyword.control.symphony",
+				"match": "\\b(push|pop)\\s+([^ \\/]*)",
+				"captures": {
+					"2":{
+						"patterns": [{
+							"name":"storage",
+							"match": "[a-zA-Z\\_\\.\\$\\:]+[a-zA-Z\\_\\.\\$\\:\\d]*"
+						}]
+					}
+				}
+
+			}]
 		}
 	},
 	"scopeName": "source.symphony"
