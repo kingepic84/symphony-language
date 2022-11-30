@@ -3,6 +3,7 @@
   "displayName": "Symphony Languange",
   "description": "Syntax highlighting for the Symphony stack language",
   "version": "0.0.1",
+  "repository": "https://github.com/kingepic84/symphony-languange",
   "engines": {
     "vscode": "^1.73.0"
   },
