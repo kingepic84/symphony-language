@@ -31,9 +31,11 @@ export function activate(context: vscode.ExtensionContext) {
 			const doc6: any = new vscode.MarkdownString("Label declarator");
 			labels.documentation = doc6;
 			const jumps = new vscode.CompletionItem('goto');
+			jumps.insertText = new vscode.SnippetString("goto ${0:LABEL}");
 			const doc7: any = new vscode.MarkdownString("Unconditional Jump");
 			jumps.documentation = doc7;
 			const condjumps = new vscode.CompletionItem('if-goto');
+			condjumps.insertText = new vscode.SnippetString("if-goto ${0:LABEL}");
 			const doc8: any = new vscode.MarkdownString("Conditional Jump");
 			condjumps.documentation = doc8;
 
@@ -94,10 +96,15 @@ export function activate(context: vscode.ExtensionContext) {
 				const lc = document.lineCount;
 				const funcList: string[] = [];
 				const complist: any[] = [];
+				const argslist: string[] = [];
 				for (let index = 0; index < lc; index++) {
 					const labelLine = document.lineAt(index);
 					if(labelLine.text.match("function ")){
 						const elem = labelLine.text.slice(9);
+						const num = labelLine.text.slice(-5);
+						const numrep = num.replace(/[a-z]*/,"");
+						const numtrim = numrep.trim();
+						argslist.push(numtrim);
 						const elem2 = elem.replace(/\d+/,"");
 						const element = elem2.trim();
 						funcList.push(element);
@@ -111,7 +118,7 @@ export function activate(context: vscode.ExtensionContext) {
 				for (let index = 0; index < funcList.length; index++) {
 					const elem = new vscode.CompletionItem(funcList[index], vscode.CompletionItemKind.Method);
 					elem.insertText = new vscode.SnippetString(funcList[index] + " " + "${0:NumArgs}");
-					const doc: any = new vscode.MarkdownString("Calls the '**" + funcList[index] + "**' function with 'n' number of arguments");
+					const doc: any = new vscode.MarkdownString("Calls function '**" + funcList[index] + "**' which can have up to '**"+ argslist[index] +"**' arguments");
 					elem.documentation = doc;
 					complist.push(elem);
 				}
