@@ -36,4 +36,8 @@ FULL RELEASE!!! Apart from Syntax Highlighting, this extension now offers ***INT
 
 Fixed a small bug with function call autocomplete. 
 
+### 1.0.2
+
+Added documentation to the Intellisense.
+
 **Enjoy the Extension!**
