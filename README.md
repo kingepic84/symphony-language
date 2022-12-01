@@ -42,6 +42,6 @@ Added documentation to the Intellisense.
 
 ### 1.1.0
 
-Created Intellisense snippets based on current labels and functions, and added snippets for push and pop as well.
+Created Intellisense snippets based on labels and functions, and added snippets for push and pop as well. These snippets will autocomplete based on functions and labels you have already created, but now they have documentation.
 
 **Enjoy the Extension!**
