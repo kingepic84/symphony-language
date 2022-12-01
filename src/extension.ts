@@ -1,7 +1,3 @@
-/*---------------------------------------------------------
- * Copyright (C) Microsoft Corporation. All rights reserved.
- *--------------------------------------------------------*/
-
 import * as vscode from 'vscode';
 
 export function activate(context: vscode.ExtensionContext) {
@@ -19,30 +15,6 @@ export function activate(context: vscode.ExtensionContext) {
 			const labels = new vscode.CompletionItem('label');
 			const jumps = new vscode.CompletionItem('goto');
 			const condjumps = new vscode.CompletionItem('if-goto');
-			// // a completion item that inserts its text as snippet,
-			// // the `insertText`-property is a `SnippetString` which will be
-			// // honored by the editor.
-			// const snippetCompletion = new vscode.CompletionItem('Good part of the day');
-			// snippetCompletion.insertText = new vscode.SnippetString('Good ${1|morning,afternoon,evening|}. It is ${1}, right?');
-			// const docs: any = new vscode.MarkdownString("Inserts a snippet that lets you select [link](x.ts).");
-			// snippetCompletion.documentation = docs;
-			// docs.baseUri = vscode.Uri.parse('http://example.com/a/b/c/');
-
-			// // a completion item that can be accepted by a commit character,
-			// // the `commitCharacters`-property is set which means that the completion will
-			// // be inserted and then the character will be typed.
-			// const commitCharacterCompletion = new vscode.CompletionItem('console');
-			// commitCharacterCompletion.commitCharacters = ['.'];
-			// commitCharacterCompletion.documentation = new vscode.MarkdownString('Press `.` to get `console.`');
-
-			// // a completion item that retriggers IntelliSense when being accepted,
-			// // the `command`-property is set which the editor will execute after 
-			// // completion has been inserted. Also, the `insertText` is set so that 
-			// // a space is inserted after `new`
-			// const commandCompletion = new vscode.CompletionItem('new');
-			// commandCompletion.kind = vscode.CompletionItemKind.Keyword;
-			// commandCompletion.insertText = 'new ';
-			// commandCompletion.command = { command: 'editor.action.triggerSuggest', title: 'Re-trigger completions...' };
 
 			// return all completion items as array
 			return [
@@ -54,9 +26,6 @@ export function activate(context: vscode.ExtensionContext) {
 				jumps,
 				condjumps,
 				labels
-				// snippetCompletion,
-				// commitCharacterCompletion,
-				// commandCompletion
 			];
 		}
 	});
@@ -80,10 +49,6 @@ export function activate(context: vscode.ExtensionContext) {
 					}
 				}
 
-				// if(labelcheck.includes("label ")){
-				// 	const labelindex = labelcheck.indexOf("label");
-
-				// }
 				const linePrefix = document.lineAt(position).text.substr(0, position.character);
 				if (!linePrefix.endsWith('goto ')) {
 					return undefined;
@@ -101,9 +66,6 @@ export function activate(context: vscode.ExtensionContext) {
 		'symphony',
 		{
 			provideCompletionItems(document: vscode.TextDocument, position: vscode.Position) {
-
-				// get all text until the `position` and check if it reads `console.`
-				// and if so then complete if `log`, `warn`, and `error`
 				
 				const lc = document.lineCount;
 				const funcList: string[] = [];
@@ -116,10 +78,6 @@ export function activate(context: vscode.ExtensionContext) {
 					}
 				}
 
-				// if(labelcheck.includes("label ")){
-				// 	const labelindex = labelcheck.indexOf("label");
-
-				// }
 				const linePrefix = document.lineAt(position).text.substr(0, position.character);
 				if (!linePrefix.endsWith('call ')) {
 					return undefined;
@@ -133,6 +91,26 @@ export function activate(context: vscode.ExtensionContext) {
 		},
 		' ' // triggered whenever a ' ' is being typed
 	);
+	const provider4 = vscode.languages.registerCompletionItemProvider(
+		'symphony',
+		{
+			provideCompletionItems(document: vscode.TextDocument, position: vscode.Position) {
 
-	context.subscriptions.push(provider1, provider2);
+				// get all text until the `position` and check if it reads `console.`
+				// and if so then complete if `log`, `warn`, and `error`
+				const linePrefix = document.lineAt(position).text.substr(0, position.character);
+				if (!linePrefix.endsWith('push ') && !linePrefix.endsWith('pop ')) {
+					return undefined;
+				}
+
+				return [
+					new vscode.CompletionItem('argument', vscode.CompletionItemKind.Method),
+					new vscode.CompletionItem('constant', vscode.CompletionItemKind.Method),
+					new vscode.CompletionItem('local', vscode.CompletionItemKind.Method),
+				];
+			}
+		},
+		' ' // triggered whenever a '.' is being typed
+	);
+	context.subscriptions.push(provider1, provider2, provider3, provider4);
 }
