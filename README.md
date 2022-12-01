@@ -32,4 +32,8 @@ Separated the highlights between the mathematical operators, the logical operato
 
 FULL RELEASE!!! Apart from Syntax Highlighting, this extension now offers ***INTELLISENSE AUTOCOMPLETE!!!*** This means that whenever you create labels, and you use the `goto` and `if-goto` statements, it will give you a list of the labels you already created to pick from! The same goes for functions, whenever you invoke `call` it will give you a list of the function names you created and autocomplete them for you!
 
+### 1.0.1 
+
+Fixed a small bug with function call autocomplete. 
+
 **Enjoy the Extension!**
