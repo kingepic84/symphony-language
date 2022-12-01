@@ -40,4 +40,8 @@ Fixed a small bug with function call autocomplete.
 
 Added documentation to the Intellisense.
 
+### 1.1.0
+
+Created Intellisense snippets based on current labels and functions, and added snippets for push and pop as well.
+
 **Enjoy the Extension!**
