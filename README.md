@@ -5,10 +5,10 @@ This extension offers extensive syntax highlighting for the SYMPHONY stack langu
 ## Features
 
 - Highlights keywords such as `function`, `label`, `goto`, and more.
-- Highlights the label names and function names such as `function main 0` and `label GO_HERE`.
+- Highlights the label names and function names such as `function main` and `label GO_HERE`.
 - Highlights the logical and mathematical operators such as `and`, `le`, `sub`, and more.
-- Highlights the stack commands, `push` and `pop`.
-- Automatically completes the `goto`, `if-goto`, and `call` statements with their respective names. Ex: For `label here`, `goto` would generate `here` as an autocomplete statement.  
+- Highlights and Autocompletes the stack commands, `push` and `pop`.
+- Automatically completes the `goto`, `if-goto`, and `call` statements with their respective names. Ex: For `label here`, typing `goto` and pressing space would generate `here` as an autocomplete option.  
 
 ## Requirements
 
