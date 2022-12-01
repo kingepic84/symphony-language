@@ -59,8 +59,8 @@ export function activate(context: vscode.ExtensionContext) {
 		{
 			provideCompletionItems(document: vscode.TextDocument, position: vscode.Position) {
 
-				// get all text until the `position` and check if it reads `console.`
-				// and if so then complete if `log`, `warn`, and `error`
+				// get all text until the `position` and check if it reads `goto`
+				// and if so then complete with all created labels
 				
 				const lc = document.lineCount;
 				const labelList: string[] = [];
@@ -132,7 +132,7 @@ export function activate(context: vscode.ExtensionContext) {
 		{
 			provideCompletionItems(document: vscode.TextDocument, position: vscode.Position) {
 
-				// get all text until the `position` and check if it reads `push or pop`
+				// get all text until the `position` and check if it reads `push` or `pop`
 				// and if so then complete `argument`, `constant`, and `local`
 				const linePrefix = document.lineAt(position).text.substr(0, position.character);
 				const cmd1 = new vscode.CompletionItem('argument', vscode.CompletionItemKind.Method);
@@ -164,8 +164,8 @@ export function activate(context: vscode.ExtensionContext) {
 		{
 			provideCompletionItems(document: vscode.TextDocument, position: vscode.Position) {
 
-				// get all text until the `position` and check if it reads `console.`
-				// and if so then complete if `log`, `warn`, and `error`
+				// get all text until the `position` and check if it reads `if-goto`
+				// and if so then complete with all labels created.
 				
 				const lc = document.lineCount;
 				const labelList: string[] = [];
