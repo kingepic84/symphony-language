@@ -13,7 +13,7 @@
 		"Programming Languages"
 	],
 	"activationEvents": [
-		"*"
+		"onLanguage:symphony"
 	],
 	"main": "./out/extension.js",
 	"scripts": {
