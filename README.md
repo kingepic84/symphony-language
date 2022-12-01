@@ -1,6 +1,6 @@
 # Symphony, a stack language.
 
-This extension offers extensive syntax highlighting for the SYMPHONY stack language.
+This extension offers extensive syntax highlighting and Intellisense autocomplete for the SYMPHONY stack language.
 
 ## Features
 
