@@ -61,7 +61,9 @@ function activate(context) {
             for (let index = 0; index < lc; index++) {
                 const labelLine = document.lineAt(index);
                 if (labelLine.text.match("function ")) {
-                    const element = labelLine.text.slice(9);
+                    const elem = labelLine.text.slice(9);
+                    const elem2 = elem.replace(/\d+/, " ");
+                    const element = elem2.trim();
                     funcList.push(element);
                 }
             }
@@ -71,6 +73,9 @@ function activate(context) {
             }
             for (let index = 0; index < funcList.length; index++) {
                 const elem = new vscode.CompletionItem(funcList[index], vscode.CompletionItemKind.Method);
+                elem.insertText = new vscode.SnippetString(funcList[index] + " " + "${1:NumArgs}");
+                const doc = new vscode.MarkdownString("Calls the " + funcList[index] + " function with 'n' number of arguments");
+                elem.documentation = doc;
                 complist.push(elem);
             }
             return complist;
