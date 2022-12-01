@@ -2,7 +2,7 @@
 	"name": "symphony-language",
 	"displayName": "Symphony Language",
 	"description": "Syntax highlighting for the Symphony stack language",
-	"version": "0.0.3",
+	"version": "1.0.0",
 	"publisher": "kingepic84",
 	"icon": "images/Trumpet.png",
 	"repository": "https://github.com/kingepic84/symphony-language",
@@ -39,10 +39,10 @@
 		"publisherDisplayName": "Emilio Rochow",
 		"publisherId": "b8f46d70-1dac-4e50-94a6-8d1ab4cc6bf0",
 		"isPreReleaseVersion": false,
-		"installedTimestamp": 1669791352363,
+		"installedTimestamp": 1669840818751,
 		"targetPlatform": "undefined",
 		"isApplicationScoped": false,
-		"updated": false,
+		"updated": true,
 		"preRelease": false
 	}
 }
