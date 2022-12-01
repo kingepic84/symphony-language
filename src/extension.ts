@@ -128,7 +128,6 @@ export function activate(context: vscode.ExtensionContext) {
 				// get all text until the `position` and check if it reads `push or pop`
 				// and if so then complete `argument`, `constant`, and `local`
 				const linePrefix = document.lineAt(position).text.substr(0, position.character);
-				const cmdlist: any[] = [];
 				const cmd1 = new vscode.CompletionItem('argument', vscode.CompletionItemKind.Method);
 				cmd1.insertText = new vscode.SnippetString("argument ${0:num}");
 				const doc: any = new vscode.MarkdownString("Pushes 'argument {num}' to the top of the stack");
@@ -141,13 +140,14 @@ export function activate(context: vscode.ExtensionContext) {
 				cmd3.insertText = new vscode.SnippetString("local ${0:num}");
 				const doc3: any = new vscode.MarkdownString("Pushes 'local {num}' to the top of the stack");
 				cmd3.documentation = doc3;
-				cmdlist.push(cmd3);
-				cmdlist.push(cmd2);
-				cmdlist.push(cmd1);
 				if (!linePrefix.endsWith('push ')) {
 					return undefined;
 				}
-				return cmdlist;
+				return [
+					cmd1,
+					cmd2,
+					cmd3
+				];
 			}
 		},
 		' ' // triggered whenever a ' ' is being typed
@@ -194,7 +194,6 @@ export function activate(context: vscode.ExtensionContext) {
 				// get all text until the `position` and check if it reads `push or pop`
 				// and if so then complete `argument`, `constant`, and `local`
 				const linePrefix = document.lineAt(position).text.substr(0, position.character);
-				const cmdlist: any[] = [];
 				const cmd1 = new vscode.CompletionItem('argument', vscode.CompletionItemKind.Method);
 				cmd1.insertText = new vscode.SnippetString("argument ${0:num}");
 				const doc: any = new vscode.MarkdownString("Pops the value on the top of the stack into 'argument {num}'");
@@ -207,14 +206,15 @@ export function activate(context: vscode.ExtensionContext) {
 				cmd3.insertText = new vscode.SnippetString("local ${0:num}");
 				const doc3: any = new vscode.MarkdownString("Pops the value on the top of the stack into 'local {num}'");
 				cmd3.documentation = doc3;
-				cmdlist.push(cmd3);
-				cmdlist.push(cmd2);
-				cmdlist.push(cmd1);
 				if (!linePrefix.endsWith('pop ')) {
 					return undefined;
 				}
 
-				return cmdlist;
+				return [
+					cmd1,
+					cmd2,
+					cmd3
+				];
 			}
 		},
 		' ' // triggered whenever a ' ' is being typed
