@@ -118,7 +118,7 @@ export function activate(context: vscode.ExtensionContext) {
 				for (let index = 0; index < funcList.length; index++) {
 					const elem = new vscode.CompletionItem(funcList[index], vscode.CompletionItemKind.Method);
 					elem.insertText = new vscode.SnippetString(funcList[index] + " " + "${0:NumArgs}");
-					const doc: any = new vscode.MarkdownString("Calls function '**" + funcList[index] + "**' which can have up to '**"+ argslist[index] +"**' arguments");
+					const doc: any = new vscode.MarkdownString("Calls '**" + funcList[index] + "**' which can have up to '**"+ argslist[index] +"**' arguments");
 					elem.documentation = doc;
 					complist.push(elem);
 				}
