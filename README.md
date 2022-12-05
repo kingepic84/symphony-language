@@ -48,4 +48,8 @@ Created Intellisense snippets based on labels and functions, and added snippets 
 
 Fixed small bug with Intellisense including comments in the snippet.
 
+### 1.2.0
+
+Added intellisense to `call`, `goto`, and `if-goto`, such that when you press tab or enter, it now gives you a lit of functions/labels to choose from. 
+
 **Enjoy the Extension!**
