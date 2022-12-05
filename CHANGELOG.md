@@ -7,7 +7,7 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 ## 1.1.1-1.2.0
 
 - Fixed some more bugs
-- tweked goto, if-goto, and call snippets
+- Tweaked goto, if-goto, and call snippets
 
 ## 1.1.0
 
