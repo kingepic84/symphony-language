@@ -37,8 +37,8 @@ function activate(context) {
     });
     const provider2 = vscode.languages.registerCompletionItemProvider('symphony', {
         provideCompletionItems(document, position) {
-            // get all text until the `position` and check if it reads `goto`
-            // and if so then complete with all created labels
+            // get all text until the `position` and check if it reads `if-goto`
+            // and if so then complete with all labels created.
             const lc = document.lineCount;
             const labelList = [];
             const complist = [];
@@ -48,8 +48,9 @@ function activate(context) {
                     const elementcomm = labelLine.text.slice(6);
                     if (elementcomm.includes("/")) {
                         const elementindex = elementcomm.indexOf("/");
-                        const elemcomm = elementcomm.slice(0, elementindex).trim();
-                        labelList.push(elemcomm);
+                        const elemcomm = elementcomm.slice(0, elementindex);
+                        const elem = (elementcomm.replace(elemcomm, "")).trim();
+                        labelList.push(elem);
                     }
                     else {
                         labelList.push(elementcomm);
@@ -62,13 +63,14 @@ function activate(context) {
             }
             for (let index = 0; index < labelList.length; index++) {
                 const elem = new vscode.CompletionItem(labelList[index], vscode.CompletionItemKind.Method);
-                const doc = new vscode.MarkdownString("*Unconditional* jump to the " + "**" + labelList[index] + '**' + " label.");
+                const doc = new vscode.MarkdownString("*Unconditional* jump to the " + "'**" + labelList[index] + "**'" + " label.");
                 elem.documentation = doc;
                 complist.push(elem);
             }
             return complist;
         }
-    });
+    }, ' ' // triggered whenever a ' ' is being typed
+    );
     const provider8 = vscode.languages.registerCompletionItemProvider('symphony', {
         provideCompletionItems(document, position) {
             const lc = document.lineCount;
@@ -293,7 +295,7 @@ function activate(context) {
             jumps = (jumps.slice(0, (jumps.length - 1))) + "|}";
             jumpy.insertText = new vscode.SnippetString("goto " + jumps);
             condjumps.insertText = new vscode.SnippetString("if-goto " + jumps);
-            return [jumpy, condjumps];
+            return [condjumps, jumpy];
         }
     });
     context.subscriptions.push(provider1, provider2, provider3, provider4, provider5, provider6, provider7, provider8, provider9);
