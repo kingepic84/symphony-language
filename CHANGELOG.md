@@ -4,6 +4,10 @@ All notable changes to the "symphony-languange" extension will be documented in 
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## 1.2.1
+
+Fixed bug with Intellisense
+
 ## 1.1.1-1.2.0
 
 - Fixed some more bugs
