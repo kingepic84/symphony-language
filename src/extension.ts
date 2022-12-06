@@ -6,7 +6,7 @@ export function activate(context: vscode.ExtensionContext) {
 
 		provideCompletionItems(document: vscode.TextDocument, position: vscode.Position, token: vscode.CancellationToken, context: vscode.CompletionContext) {
 
-			// a simple completion item which inserts `Hello World!`
+			// a simple completion item
 			const funcs= new vscode.CompletionItem('function');
 			funcs.insertText = new vscode.SnippetString("function ${1:FNAME} ${0:NumLocals}");
 			const doc: any = new vscode.MarkdownString("Function Declarator");
@@ -54,15 +54,20 @@ export function activate(context: vscode.ExtensionContext) {
 				for (let index = 0; index < lc; index++) {
 					const labelLine = document.lineAt(index);
 					if(labelLine.text.match("label ")){
-						const elementcomm = labelLine.text.slice(6);
-						if(elementcomm.includes("/")){
+						const elementcomm = labelLine.text;
+						if(elementcomm.includes("//")){
 							const elementindex = elementcomm.indexOf("/");
-							const elemcomm = elementcomm.slice(0, elementindex);
-							const elem = (elementcomm.replace(elemcomm, "")).trim();
-							labelList.push(elem);
+							if (elementindex == 0){
+								0;
+							}
+							else{
+								const elemcomm = elementcomm.slice(0, elementindex).slice(6).trim();
+								labelList.push(elemcomm);
+							}
 						}
 						else{
-							labelList.push(elementcomm);
+							const labeltext = labelLine.text.slice(6).trim();
+							labelList.push(labeltext);
 						}
 					}
 				}
@@ -95,15 +100,21 @@ export function activate(context: vscode.ExtensionContext) {
 				for (let index = 0; index < lc; index++) {
 					const funcLine = document.lineAt(index);
 					if(funcLine.text.match("function ")){
-						const elementcomm = funcLine.text.slice(9);
-						if(elementcomm.includes("/")){
+						const elementcomm = funcLine.text;
+						if(elementcomm.includes("//")){
 							const elementindex = elementcomm.indexOf("/");
-							const elemcomm = elementcomm.slice(0, elementindex).trim();
-							const elem = elemcomm.replace(/\s\d+/, "").trim();
-							funcList.push(elem);
+							if(elementindex == 0){
+								0;
+							}
+							else{
+								const elemcomm = elementcomm.slice(0, elementindex).trim();
+								const elem = elemcomm.replace(/\s\d+/, "").trim();
+								funcList.push(elem);
+							}
 						}
 						else{
-							const elem = elementcomm.replace(/\s\d+/, "").trim();
+							const funcline = elementcomm.slice(9).trim();
+							const elem = funcline.replace(/\s\d+/, "").trim();
 							funcList.push(elem);
 						}
 					}
@@ -130,19 +141,24 @@ export function activate(context: vscode.ExtensionContext) {
 				for (let index = 0; index < lc; index++) {
 					const funcLine = document.lineAt(index);
 					if(funcLine.text.match("function ")){
-						const elementcomm = funcLine.text.slice(9);
-						if(elementcomm.includes("/")){
+						const elementcomm = funcLine.text;
+						if(elementcomm.includes("//")){
 							const elementindex = elementcomm.indexOf("/");
-							const elemcomm = elementcomm.slice(0, elementindex).trim();
-							const elem = elemcomm.replace(/\d+/, "").trim();
-							const numrep = elemcomm.replace(/(\D|\s\d)*/,"").trim();
-							argslist.push(numrep);
-							funcList.push(elem);
+							if (elementindex == 0) {
+								0;
+							} 
+							else {
+								const elemcomm = elementcomm.slice(0, elementindex).slice(9).trim();
+								const elem = elemcomm.replace(/\d+/, "").trim();
+								const numrep = elemcomm.replace(/(\D|\s\d)*/,"").trim();
+								argslist.push(numrep);
+								funcList.push(elem);
+							}
 						}
 						else{
-							const numrep = elementcomm.replace(/(\D|\d\s)*/,"").trim();
+							const numrep = elementcomm.slice(9).replace(/(\D|\d\s)*/,"").trim();
 							argslist.push(numrep);
-							const elem = elementcomm.replace(/\s\d+/, "").trim();
+							const elem = elementcomm.slice(9).replace(/\s\d+/, "").trim();
 							funcList.push(elem);
 						}
 					}
@@ -238,15 +254,20 @@ export function activate(context: vscode.ExtensionContext) {
 				for (let index = 0; index < lc; index++) {
 					const labelLine = document.lineAt(index);
 					if(labelLine.text.match("label ")){
-						const elementcomm = labelLine.text.slice(6);
-						if(elementcomm.includes("/")){
+						const elementcomm = labelLine.text;
+						if(elementcomm.includes("//")){
 							const elementindex = elementcomm.indexOf("/");
-							const elemcomm = elementcomm.slice(0, elementindex);
-							const elem = (elementcomm.replace(elemcomm, "")).trim();
-							labelList.push(elem);
+							if(elementindex == 0){
+								0;
+							}
+							else{
+								const elemcomm = elementcomm.slice(0, elementindex).slice(6).trim();
+								labelList.push(elemcomm);
+							}
 						}
 						else{
-							labelList.push(elementcomm);
+							const labeltext = labelLine.text.slice(6).trim();
+							labelList.push(labeltext);
 						}
 					}
 				}
@@ -370,14 +391,20 @@ export function activate(context: vscode.ExtensionContext) {
 				for (let index = 0; index < lc; index++) {
 					const labelLine = document.lineAt(index);
 					if(labelLine.text.match("label ")){
-						const elementcomm = labelLine.text.slice(6);
-						if(elementcomm.includes("/")){
+						const elementcomm = labelLine.text;
+						if(elementcomm.includes("//")){
 							const elementindex = elementcomm.indexOf("/");
-							const elemcomm = elementcomm.slice(0, elementindex).trim();
-							labelList.push(elemcomm);
+							if(elementindex == 0){
+								0;
+							}
+							else{
+								const elemcomm = elementcomm.slice(0, elementindex).slice(6).trim();
+								labelList.push(elemcomm);
+							}
 						}
 						else{
-							labelList.push(elementcomm);
+							const labeltext = labelLine.text.slice(6).trim();
+							labelList.push(labeltext);
 						}
 					}
 				}
