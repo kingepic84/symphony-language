@@ -52,4 +52,8 @@ Fixed small bug with Intellisense including comments in the snippet.
 
 Added intellisense to `call`, `goto`, and `if-goto`, such that when you press tab or enter, it now gives you a lit of functions/labels to choose from. 
 
+### 1.2.1
+
+Fixed a big where commented functions and labels were being included in the autocomplete.
+
 **Enjoy the Extension!**
