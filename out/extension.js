@@ -322,13 +322,38 @@ function activate(context) {
             cmd3.insertText = new vscode.SnippetString("local ${0:num}");
             const doc3 = new vscode.MarkdownString("The local segment");
             cmd3.documentation = doc3;
+            const cmd4 = new vscode.CompletionItem('static', vscode.CompletionItemKind.Method);
+            cmd4.insertText = new vscode.SnippetString("static ${0:num}");
+            const doc4 = new vscode.MarkdownString("Pops the value on the top of the stack into 'static {num}'");
+            cmd4.documentation = doc4;
+            const cmd5 = new vscode.CompletionItem('pointer', vscode.CompletionItemKind.Method);
+            cmd5.insertText = new vscode.SnippetString("pointer ${0:num}");
+            const doc5 = new vscode.MarkdownString("Pops the value on the top of the stack into 'pointer {num}'");
+            cmd5.documentation = doc5;
+            const cmd6 = new vscode.CompletionItem('this', vscode.CompletionItemKind.Method);
+            cmd6.insertText = new vscode.SnippetString("this ${0:num}");
+            const doc6 = new vscode.MarkdownString("Pops the value on the top of the stack into 'this {num}'");
+            cmd6.documentation = doc6;
+            const cmd7 = new vscode.CompletionItem('that', vscode.CompletionItemKind.Method);
+            cmd7.insertText = new vscode.SnippetString("that ${0:num}");
+            const doc7 = new vscode.MarkdownString("Pops the value on the top of the stack into 'that {num}'");
+            cmd7.documentation = doc7;
+            const cmd8 = new vscode.CompletionItem('temp', vscode.CompletionItemKind.Method);
+            cmd8.insertText = new vscode.SnippetString("temp ${0:num}");
+            const doc8 = new vscode.MarkdownString("Pops the value on the top of the stack into 'temp {num}'");
+            cmd8.documentation = doc8;
             if (!linePrefix.endsWith('pop a') && !linePrefix.endsWith('pop l') && !linePrefix.endsWith('push c') && !linePrefix.endsWith('push l') && !linePrefix.endsWith('push a')) {
                 return undefined;
             }
             return [
                 cmd1,
                 cmd2,
-                cmd3
+                cmd3,
+                cmd4,
+                cmd5,
+                cmd6,
+                cmd7,
+                cmd8
             ];
         }
     });
